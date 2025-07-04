@@ -1,68 +1,102 @@
-# Pneumonia Detection using CNN & Its Variants
 
-This project involves building deep learning models to automatically detect **pneumonia** from chest X-ray images using **Convolutional Neural Networks (CNN)** and its advanced variants. The goal is to assist radiologists and healthcare professionals in identifying pneumonia cases quickly and accurately.
+# 🩺 Pneumonia Detection using CNN & Its Variants
+
+This project uses Convolutional Neural Networks (CNNs) and its variants to detect pneumonia from chest X-ray images. The objective is to assist radiologists and healthcare professionals in early and accurate diagnosis of pneumonia using deep learning techniques.
 
 ---
 
 ## 📁 Project Structure
 
+pneumonia_detection/
+│
+├── Capstone_Project_Milestone2.ipynb # Main notebook
+├── pneumonia_dataset/ # X-ray images (train/test/val)
+├── model/ # Saved models (optional)
+├── requirements.txt # Required Python libraries
+└── README.md # Project overview
+
+
+## 🧠 Problem Statement
+
+Pneumonia is a potentially fatal lung infection. Traditional diagnosis from chest X-rays is time-consuming and requires trained professionals. This project aims to automate the detection of pneumonia using a trained deep learning model on labeled X-ray images.
 
 ---
 
-## 📊 Dataset
+## 📦 Dataset
 
-- **Source**: [Kaggle - Chest X-Ray Images (Pneumonia)](https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia)
-- **Categories**:
-  - Normal
-  - Pneumonia (bacterial/viral)
-
----
-
-## 🧠 Models Used
-
-1. **Basic CNN**
-   - 3 Conv layers + MaxPooling
-   - Dense layer + Sigmoid output
-
-2. **CNN with Data Augmentation**
-   - Added `ImageDataGenerator` for better generalization
-
-3. **CNN with Dropout Regularization**
-   - Prevents overfitting with `Dropout(0.5)`
-
-4. **Transfer Learning with VGG16**
-   - Pretrained VGG16 + custom classifier layers
+- **Source**: [Kaggle Chest X-Ray Dataset](https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia)
+- **Structure**:
+  - `train/`: Normal and pneumonia cases
+  - `test/`: Evaluation images
+  - `val/`: Validation data
 
 ---
 
-## 📈 Evaluation Metrics
+## ⚙️ Technologies Used
+
+- Python 🐍
+- TensorFlow / Keras
+- NumPy / Pandas
+- Matplotlib / Seaborn
+- OpenCV (optional for preprocessing)
+
+---
+
+## 🏗️ Model Architecture
+
+- Custom CNN
+- Pretrained models (optional): VGG16, ResNet50, etc.
+- Layers:
+  - Convolutional + MaxPooling
+  - Dropout
+  - Dense
+  - Softmax/Sigmoid Output
+
+
+## 🎯 Evaluation Metrics
 
 - Accuracy
-- Precision / Recall
+- Precision
+- Recall
 - F1-Score
 - Confusion Matrix
-- ROC Curve (AUC)
 
----
+## 📈 Results
 
-## 🧪 Sample Results
+| Model | Accuracy|
+|-------|----------
+| CNN   | 68%     |
 
-| Model                     | Accuracy | Recall | Precision | F1-Score |
-|--------------------------|----------|--------|-----------|----------|
-| Basic CNN                | 85%      | 84%    | 86%       | 85%      |
-| CNN + Augmentation       | 88%      | 87%    | 89%       | 88%      |
-| CNN + Dropout            | 89%      | 88%    | 90%       | 89%      |
-| VGG16 Transfer Learning  | **93%**  | 92%    | 94%       | 93%      |
 
----
+## 💡 Key Insights
 
-## 🛠️ Requirements
+- CNN models can effectively classify chest X-ray images.
+- Data augmentation helps reduce overfitting.
+- Training with a balanced dataset improves generalization.
 
-```bash
-tensorflow
-keras
-matplotlib
-seaborn
-scikit-learn
-opencv-python
 
+## 📝 How to Run
+
+1. Clone the repo:
+   git clone https://github.com/kanmeet/Machine-Learning-Model.git
+   cd pneumonia_detection/
+
+Install dependencies:
+pip install -r requirements.txt
+
+Run the notebook:
+jupyter notebook Capstone_Project_Milestone2.ipynb
+
+📌 Recommendations
+
+Fine-tune using transfer learning (e.g., ResNet, EfficientNet)
+
+Deploy as a web app for hospitals (e.g., Streamlit)
+
+Integrate with mobile apps for real-time diagnosis
+
+
+👩‍⚕️ Author
+
+Anmeet Kaur
+📧 Email | 🔗 GitHub
